@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script trpr="text/javascript">
+        // 源数据
+        let person = {
+            name:'章三',
+            age:22
+        }
+        // 模拟响应式数据vue2
+        //#region
+        // let p ={}
+        // Object.defineProperty(p,'name',{
+        //     configurable:true,
+        //     get(){//有人读取时调用
+        //         console.log('有人读取name属性');
+        //         return person.name
+        //     },
+        //     set(value){//有人修改时调用
+        //         console.log('修改了name属性，更新界面！');
+        //         person.name = value
+        //     }
+        // })
+        // Object.defineProperty(p,'age',{
+        //     get(){
+        //         return person.age
+        //     },
+        //     set(value){
+        //         console.log('有人修改了age属性，更新界面！');
+        //         person.age = value
+        //     }
+        // })
+        //#endregion
+//   模拟vue3中实现响应式
+        // window.Proxy
+       /*  const p = new Proxy(person,{
+            // 🌈即使不写get,set,deleteProperty也可以增删改查，写这些方法是为了捕获到它的修改，做响应式
+            //💧读取的时候调用
+            get(target,prop){//target源对象  prop属性名
+                console.log(target,`有人读取了p身上的属性--${prop}`)
+                //return target[prop]//🍄写法1
+                return Reflect.get(target,prop)//🍄写法2
+            },
+            // 💧修改或增加属性的时候调用
+            set(target,prop,value){
+                console.log(`有人修改了p身上的${prop}属性，更新界面！`);
+                //🌸 直接修改p.name，p不起作用，得修改源数据身上对应的prop的变化才可以
+                // target[prop] = value///🍄写法1
+                Reflect.set(target,prop,value)//🍄写法2
+            },
+            // 💧删除属性时候调用
+            deleteProperty(target,prop){
+                console.log(`有人删除了p身上的${prop}属性,更新界面！`);
+                // 🌸直接删除p的属性也不起作用，得删除源数据身上对应的prop才可以
+                // 必须要有返回值 没有返回值就是false
+                // return delete target[prop]//🍄写法1
+                return Reflect.deleteProperty(target,prop)//🍄写法2
+            }
+        }) */
+  
+
+        // 
+        let obj = {a:1,b:2}
+        //不能重复定义一个属性，会报错//Cannot redefine property:at Function.defineProperty
+       //🍀对于封装框架来说，不捕获错误，只能通过try...catch来捕获错误，代码才能继续执行下去
+      try{
+        Object.defineProperty(obj,'c',{
+            get(){
+                return 3
+            }
+        })
+        Object.defineProperty(obj,'c',{
+            get(){
+                return 4
+            }
+        })
+      }catch(error){
+        console.log(error);
+      }
+  
+        //🍀 Reflect对于封装框架来说，方便捕获错误，不用写try...catch
+        const x1 = Reflect.defineProperty(obj,'c',{
+            get(){
+                return 3
+            }
+        })
+        const x2 = Reflect.defineProperty(obj,'c',{
+            get(){
+                return 4
+            }
+        })
+        if(x2){
+            console.log('某某操作成功');
+        }else{
+            console.log('某某操作失败');//💥
+        }
+
+        console.log('@@');
+
+  </script>
+</body>
+</html>

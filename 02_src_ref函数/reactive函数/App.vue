@@ -25,7 +25,7 @@ export default {
   setup () {
     // 数据
     // 🌼写法1 分开写
-    /*  let name = ref('章三')  
+    /*  let name = ref('章三')
      let age = ref(18)
      //  let job = ref({
      //    type: '前端工程师',
