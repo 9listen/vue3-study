@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // 创建应用实例对象
 const app = createApp(App)
-// console.log('@@@', app);
+console.log('@@@', app);
 app.mount('#app')
 // 两秒后取消挂载，页面啥也没了
 /* setTimeout(() => {
