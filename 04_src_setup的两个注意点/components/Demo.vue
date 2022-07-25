@@ -22,7 +22,7 @@ export default {
     console.log('---setup,context', context);
     console.log('---setup,context.attrs', context.attrs);//相当于vue2中的$attrs
     console.log('---setup,context.emit', context.emit);//触发自定义事件
-    console.log('---setup,context.slots', context.slots);
+    console.log('---setup,context.slots', context.slots);//插槽
     // 数据
     let person = reactive({
       name: '章三',

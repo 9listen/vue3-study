@@ -5,15 +5,12 @@
 
 <script>
 import usePoint from '../hooks/usePoint'
-import { ref } from 'vue'
 export default {
   name: 'aTest',
   setup () {
-    let name = ref('tom')
     const point = usePoint()
     return {
       point,
-      name
     }
   }
 }

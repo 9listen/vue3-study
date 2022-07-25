@@ -52,6 +52,7 @@ export default {
       console.log(this.sayWelcome, '来自vue2的数据');//undefined
       console.log(this.sex, '来自vue2的数据');//undefined
     }
+    // 🔥🔥vue2里面可以读取vue3的数据，vue3里面不可以读取vue2的数据
     // 写法1:返回一个对象-常用
     return {
       name,

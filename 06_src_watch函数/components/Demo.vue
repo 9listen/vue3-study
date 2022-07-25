@@ -80,7 +80,7 @@ export default {
     // ⭐️特殊情况
     watch(() => person.job, (newValue, oldValue) => {
       console.log('person的job变化了', newValue, oldValue);
-    }, { deep: true })//此处由于监视的是reactive所定义的对象中的某个属性，所以deep配置有效
+    }, { deep: true })//此处由于监视的是reactive所定义的 对象中 的某个属性，所以deep配置有效
 
     return {
       sum,
