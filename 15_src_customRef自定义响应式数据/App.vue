@@ -18,19 +18,19 @@ export default {
         //🔥 调用customRef函数所收到两个参数trigger(),track()
         return {//语法要求
           get () {
-            console.log(`从myRef中读取数据${value}`);//打印两次，因为页面使用了两次
+            // console.log(`从myRef中读取数据${value}`);//打印两次，因为页面使用了两次
             track()//🔥追踪keyword的改变
             return value
           },
           set (newValue) {
-            console.log(`修改myRef中的数据:${newValue}`);
+            // console.log(`修改myRef中的数据:${newValue}`);
             clearTimeout(timer)
             timer = setTimeout(() => {
               value = newValue
               trigger()//🔥通知vue重新解析模板
             }, delay)
             //定时器一直开着，每次修改都要开一个定时器，打开一堆定时器，就会把很多trigger积压在一起，所以每次开启前
-            // 先清除定时器
+            //先清除定时器
 
           },
         }

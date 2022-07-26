@@ -30,7 +30,7 @@ export default {
     const name1 = person.name
     console.log('%%%', name1);
     //🌟 toRef帮你把一个不是ref的东西变成ref对象--语雀截图
-    const name2 = toRef(person, 'name')//这里name2--->RefImpl{...value}--->person.name中间是链接的
+    const name2 = toRef(person, 'name')//这里name2--->RefImpl{...value}--->person.name  中间是链接的
     console.log('@@@', name2);
     //🌟 toRefs是批量处理一个对象里的所有属性，无需第二个参数
     const x = toRefs(person)

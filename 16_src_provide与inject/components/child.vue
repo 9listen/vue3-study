@@ -13,7 +13,7 @@ export default {
   components: { Son },
   setup () {
     let x = inject('car')
-    console.log(x);
+    // console.log(x);
     return { x }
   }
 

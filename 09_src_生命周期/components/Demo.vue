@@ -10,21 +10,6 @@ import { ref, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmou
 // 组合API就是一些函数：ref,reactive,watch,computed...
 export default {
   name: 'aDemo',
-  //vue2写法
-  watch: {
-    // 写法1
-    /* sum (newValue, oldValue) {
-      console.log('sum的值变化了', newValue, oldValue);
-    } */
-    // 写法2
-    /*   sum: {
-        immediate: true,//上来就监听一次
-        deep: true,//深度监听
-        handler (newValue, oldValue) {
-          console.log('sum的值变化了', newValue, oldValue);
-        }
-      } */
-  },
   setup () {
     console.log('---setup');
     // 数据

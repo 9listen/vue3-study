@@ -61,6 +61,7 @@ export default {
 
     function changeInfo () {
       //#region
+      // 写法1，分开定义
       // name.value = '李四'
       // age.value = 48
       // console.log(name, age);
@@ -79,7 +80,7 @@ export default {
       // num.value = 121
       //#endregion
 
-      // 🌾写法2对应修改
+      // 🌾写法2--全部写在person对象里面-- 对应修改
       person.name = '李四'
       person.age = 48
       person.job.type = "作家"

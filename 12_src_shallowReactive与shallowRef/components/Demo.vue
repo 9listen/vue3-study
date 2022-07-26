@@ -31,9 +31,11 @@ export default {
       }
     })
     // 区别体现在传入的是不是对象类型，
+
     //🍄 1.传入基本类型没区别⭐️
     // let x = ref(0)
     // let x = shallowRef(0)
+
     //🍄 2.传入一个对象的话,ref内部会调用reactive,变成一个proxy代理对象，也是响应式的;
     // 而shallowRef不去处理对象类型的响应式数据,如果明确以后不会再修改x里面的y，就可以用shallowRef
     let x = shallowRef({//点击也不会改变

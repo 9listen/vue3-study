@@ -10,7 +10,7 @@ export default {
   name: 'aSon',
   setup () {
     let car = inject('car')
-    console.log(car)//拿到了一个响应式数据
+    // console.log(car)//拿到了一个响应式数据
     return {
       car
     }

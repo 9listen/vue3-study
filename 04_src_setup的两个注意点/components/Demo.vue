@@ -11,7 +11,7 @@
 import { reactive } from 'vue'
 export default {
   name: 'aDemo',
-  props: ['msg', 'school'],//, 'a'//传过来的属性不接收会有警告；没传a但是接收了，结果就是a=undefined
+  props: ['msg', 'school'],//, 'a'//传过来的属性不接收会有警告；没传a属性但是接收了，结果就是a=undefined
   emits: ['hello'],//消除警告⚠️：子组件还要告诉父组件：我知道你给我绑定一个 hello事件
   beforeCreate () {
     // console.log('---beforeCreate---');
